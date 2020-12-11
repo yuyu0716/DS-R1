@@ -1,0 +1,57 @@
+# 2020/12/11(五), 109學年第一學期 資料科學應用 R期中考
+
+學號:A107260080       姓名: 劉得宇
+
+# (請依照規定)貼上執行程式碼及執行結果。
+詳見: R程式作業繳交方式
+http://www.hmwu.idv.tw/web/teaching/doc/R-how-homework.pdf
+
+ #1
+> cities <- factor(c("Eng.hr"," Comp.hr"," Tuition","U Fit"))
+> levels(cities)
+[1] " Comp.hr" " Tuition" "Eng.hr"   "U Fit"   
+> x <- readline("Eng.hr：")
+Eng.hr：y <- as.numeric(readline("Comp.hr："))
+> cities<- function(x, y){
++                 list(points.a=c(x, y))
++ }
+> #2(a)
+> xlsx_file<- "data/Score-109.xlsx"
+> excel_sheets(xlsx_file)
+[1] "score"
+> mydata<-read_excel(xlsx_file,sheet="score",na="NA",skip=1)
+> a1<-as.data.frame(head(mydata, 5))
+> b1<-as.data.frame(tail(mydata, 5))
+> a1
+    ID Calculus English
+1 No.1       72      62
+2 No.2       88      97
+3 No.3       76      66
+4 No.4       89      51
+5 No.5       46      15
+> b1
+     ID Calculus English
+1 No.71       69      96
+2 No.72       51     100
+3 No.73       37      50
+4 No.74       33      92
+5 No.75        4      37
+> #2(c)
+> my.cor<- x2
+錯誤: 找不到物件 'x2'
+> names(my.cor) <- c("hit" , "run")
+> x2_r = cor.test(x2[,"hit"],x2[,"run"],
++                       alternative = c("two.sided"),
++                       method="spearman",exact=T,
++                       conf.level = 0.95, continuity = FALSE)
+Error in cor.test(x2[, "hit"], x2[, "run"], alternative = c("two.sided"),  : 
+  找不到物件 'x2'
+> #3
+> my.dnorm<- factor(c("x 值","平均數","μ","及標準差 σ"))
+> levels(cities)
+NULL
+> 
+> 
+> 
+> 
+
